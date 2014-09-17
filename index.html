@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Express.io</title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script>
+		var socket = io.connect();
+		
+		$(document).ready(function(){
+
+			// Listen for the talk event.
+			socket.on('talk', function(data) {
+			    $('#talkE').append(data.valor + '<br />');
+			});
+			
+		});
+	</script>
+
+</head>
+<body>
+	<h1>Bienvenido al sistema</h1>
+
+	<div id="talkE"></div>
+</body>
+</html>
